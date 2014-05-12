@@ -1,0 +1,3 @@
+javascript: var a = document.createElement("script"); a.src = "http://127.0.0.1:4567/startup?url=" + escape(window.location); a.type="text/javascript"; document.body.appendChild(a); void(0);
+
+javascript: var a = document.createElement("script"); a.src = "http://127.0.0.1:4567/new?url=" + escape(window.location); a.type="text/javascript"; document.body.appendChild(a); void(0);

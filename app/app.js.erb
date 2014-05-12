@@ -1,0 +1,28 @@
+(function(){var app = function(){
+   var _lm = function(src, callback){
+     var f = document.createElement("script");
+     f.src = src;
+     f.addEventListener("load", callback, false);
+     document.body.appendChild(f);
+     return f;
+   }
+   
+  <%= File.read 'app/util.js' %>
+  var fill = function(){
+     <%= run %>
+  }
+
+  if(window.jQuery){
+    fill()
+  }else{
+    _lm("http://libs.baidu.com/jquery/2.0.0/jquery.min.js", function(){
+       fill();
+    })
+  }
+ 
+}
+
+ app();
+
+})()
+
