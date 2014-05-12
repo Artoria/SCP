@@ -15,10 +15,10 @@ end
 
 class RQ < RCore
   def initialize(dir)
-    @dir = File.join("./R", dir)
+    @dir = dir
   end
   def resolve(f)
-    File.read(File.join(@dir, f) + ".txt").force_encoding("UTF-8")
+    R(File.join(@dir, f))
   end
   def value
     render 'main', self
@@ -31,8 +31,11 @@ def R(a)
    case 
       when FileTest.file?(entry + ".txt")
 	  File.read(entry + ".txt").force_encoding("UTF-8")
+      when FileTest.file?(entry + ".lst")
+	  File.read(entry + ".lst").force_encoding("UTF-8").split(/\n|\r/).compact.reject{|x| x == ""}.sample
       when FileTest.directory?(entry)
-	  RQ.new(entry).value
+	  RQ.new(a).value
+
    end
 end
 
@@ -111,6 +114,7 @@ end
 def findrule(url, type = :register)
   RULES[type].each{|k, v|
      if k === url
+	 puts "#{url} -> #{type} #{k}"
 	return Rule.new(type, &v)
      end
   }

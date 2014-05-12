@@ -1,3 +1,3 @@
-javascript: var a = document.createElement("script"); a.src = "http://127.0.0.1:4567/startup?url=" + escape(window.location); a.type="text/javascript"; document.body.appendChild(a); void(0);
+javascript:%20var%20a%20=%20document.createElement("script");%20a.src%20=%20%20%20"http://127.0.0.1:4567/startup?url="%20+%20escape(window.location);%20a.type="text/javascript";%20%20%20document.body.appendChild(a);%20void(0);
 
-javascript: var a = document.createElement("script"); a.src = "http://127.0.0.1:4567/new?url=" + escape(window.location); a.type="text/javascript"; document.body.appendChild(a); void(0);
+javascript:%20var%20a%20=%20document.createElement("script");%20a.src%20=%20"http://127.0.0.1:4567/new?url="%20+%20escape(window.location);%20a.type="text/javascript";%20document.body.appendChild(a);%20void(0);
