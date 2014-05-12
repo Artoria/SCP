@@ -1,3 +1,0 @@
-<%= render 'p1' %>
-<%= render 'p2' %>
-<%= render 'p3' %>
